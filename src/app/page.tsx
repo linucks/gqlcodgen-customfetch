@@ -1,7 +1,25 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { gql, useQuery } from "urql";
 
 export default function Home() {
+  const FilmsQuery = gql`
+    query AllFilms {
+      allFilms {
+        films {
+          title
+        }
+      }
+    }
+  `;
+
+  const [result, reexecuteQuery] = useQuery({
+    query: FilmsQuery,
+  });
+
+  const { data } = result;
+  console.log(`GOT DATA ${JSON.stringify(data, null, 2)}`);
   return (
     <div className={styles.page}>
       <main className={styles.main}>

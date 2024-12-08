@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Additional dependencies and codegen
+
+```
+npm install --save-dev @graphql-codegen/cli
+npm install --save urql
+```
+
+`npx graphql-codegen --config codegen.ts`
+
 ## Getting Started
 
 First, run the development server:
